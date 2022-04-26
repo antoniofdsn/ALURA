@@ -1,0 +1,28 @@
+<meta charset="UTF-8">
+
+<h3>---- Cálculadora de pontos futebol  ----</h3>
+
+<script>
+
+	 function pulaLinha() {
+	
+		document.write("<br><br>");
+	
+	};
+	
+	function mostra(frase) {
+	
+		document.write(frase);
+		pulaLinha();
+	};
+
+	
+	var nomeTime = prompt("Escreva o nome do seu time:");
+	var vitorias = parseInt(prompt("Seu time venceu quantas vezes?"));
+	var empates = parseInt(prompt("Seu time empatou quantas vezes?"));
+	
+	var pontos = (vitorias * 3) + empates;
+
+	mostra(nomeTime + " está com " + pontos + ".");
+	
+</script>

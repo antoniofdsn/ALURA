@@ -1,0 +1,37 @@
+<meta charset="UTF-8">
+
+<h3>Álcool ou Gasolina?</h3>
+
+<script>
+
+	 function pulaLinha() {
+	
+		document.write("<br><br>");
+	
+	};
+
+	var tanque = 40;//litros
+	
+	//Gasolina:
+	var caminhoComGasolina = 480;//km
+	var consumoDeGasolina = caminhoComGasolina/tanque;
+	
+	//Álcool:
+	var caminhoComAlcool = 300;//km
+	var consumoDeAlcool = caminhoComAlcool/tanque;
+	
+	document.write("O consumo de gasolina é " + consumoDeGasolina + " km/l");
+	
+	pulaLinha();
+	
+	document.write("O consumo de álcool é " + consumoDeAlcool + " km/l");
+	
+	pulaLinha();
+	
+	if (consumoDeGasolina > consumoDeAlcool) {
+	document.write("<h1>É melhor colocar álcool binho!</h1>");
+	} else {
+	document.write("<h1>É melhor colocar gasolina binho!</h1>");
+	};
+	
+</script>

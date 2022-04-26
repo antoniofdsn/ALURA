@@ -1,0 +1,35 @@
+<meta charset="UTF-8">
+
+<h3>---- Números Pares ----</h3>
+
+<script>
+
+	 function pulaLinha() {
+	
+		document.write("<br><br>");
+	
+	};
+	
+	function mostra(frase) {
+	
+		document.write(frase);
+		pulaLinha();
+	};
+
+	function calculaImc(altura, peso) {
+	
+		return peso / (altura * altura);
+		
+	};
+	
+	var numeroPar = 2;
+	
+	while(numeroPar <= 100) {
+	
+	mostra(numeroPar);
+	numeroPar = numeroPar + 2;
+		
+	}
+	mostra("FIM");
+	
+</script>

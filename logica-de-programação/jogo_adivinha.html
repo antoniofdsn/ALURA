@@ -1,0 +1,47 @@
+<meta charset="UTF-8">
+
+<h3>---- Adivinha ----</h3>
+
+<script>
+
+	 function pulaLinha() {
+	
+		document.write("<br><br>");
+	
+	};
+	
+	function mostra(frase) {
+	
+		document.write(frase);
+		pulaLinha();
+	};
+
+	function calculaImc(altura, peso) {
+	
+		return peso / (altura * altura);
+		
+	};
+	
+	var numeroPensado = Math.floor(Math.random() * 5 + 1);
+	var nome = prompt("Informe seu nome:");
+	
+	var tentativas = 1;
+	
+	while(tentativas <= 3) {
+	
+		var chute = parseInt(prompt(nome + ", digite seu chute!"));
+	
+		if(chute == numeroPensado) {
+
+    			mostra("Você acertou!");
+    			break;
+
+		} else {
+	
+		mostra(tentativas + ") Não foi dessa vez...");
+		
+		}
+		tentativas++;
+	}
+	
+</script>
