@@ -1,26 +1,31 @@
 import { Cliente } from "./Cliente.js";
-import { ContaCorrente } from "./ContaCorrente.js";
+import { Gerente } from "./Funcionario/Gerente.js";
+import { Diretor } from "./Funcionario/Diretor.js";
+import { SistemaAutenticacao } from "./SistemaAutenticacao.js";
 
-const cliente1 = new Cliente("Ricardo", 11122233309);
+const diretor = new Diretor("Rodrigo", 10000, 12545682088);
+diretor.cadastrarSenha("123456");
+const gerente = new Gerente("Ricardo", 5000, 12945668208);
+gerente.cadastrarSenha("123");
+const cliente = new Cliente("Joao", 5000, 12945668208);
 
-const contaCorrenteRicardo = new ContaCorrente(1001, cliente1);
-contaCorrenteRicardo._saldo = 10;
-contaCorrenteRicardo.depositar(100);
-contaCorrenteRicardo.sacar(50);
+const gerenteEstaLogado = SistemaAutenticacao.login(gerente, "123");
+const diretorEstaLogado = SistemaAutenticacao.login(diretor, "123456");
+const clienteEstaLogado = SistemaAutenticacao.login(cliente, "456");
 
-const cliente2 = new Cliente("Alice", 88822233309);
+console.log(gerenteEstaLogado, diretorEstaLogado, clienteEstaLogado);
 
-const contaCorrenteAlice = new ContaCorrente(1001, cliente2);
-contaCorrenteAlice._saldo = 100;
-contaCorrenteAlice.depositar(500);
+// import { ContaCorrente } from "./Conta/ContaCorrente.js";
+// import { ContaPoupanca } from "./Conta/ContaPoupanca.js";
+// import { ContaSalario } from "./Conta/ContaSalario.js";
 
-const cliente3 = new Cliente("Bel", 88822233309);
+// const cliente1 = new Cliente("Ricardo", 11122233309);
 
-const contaCorrenteBel = new ContaCorrente(1001, cliente3);
-contaCorrenteBel._saldo = 100;
+// const contaCorrenteRicardo = new ContaCorrente(0, cliente1, 1001);
+// contaCorrenteRicardo.depositar(500);
+// contaCorrenteRicardo.sacar(100);
 
-contaCorrenteAlice.transferir(300, contaCorrenteBel);
+// const contaPoupanca = new ContaPoupanca(50, cliente1, 1001);
 
-console.log(ContaCorrente.numeroDeContas);
-console.log(contaCorrenteAlice);
-console.log(cliente3, contaCorrenteBel._saldo);
+// console.log(contaPoupanca);
+// console.log(contaCorrenteRicardo);
